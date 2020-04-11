@@ -33,7 +33,7 @@ nav {
     align-items: center;
     position: fixed;
     z-index: 1;
-    background-color: red;
+    background-color: #d4e4bc;
 }
 
 nav a {
@@ -41,12 +41,114 @@ nav a {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+hr {
+    width: 90%;
+}
+
 main {
     padding-top: 3em;
-    background-color: blue;
+    background-color: #96acb7;
+    background-image: linear-gradient(
+        180deg,
+        hsl(200, 19%, 95%),
+        hsl(200, 19%, 45%)
+    );
 }
 
 #welcome-section {
     height: 100vh;
-    padding-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#welcome-section h1 {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+#welcome-section p {
+    font-weight: 300;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin: 2em 0;
+    font-size: 1.5em;
+}
+
+.project-tile {
+    background-color: white;
+    width: 15em;
+    border-radius: 0.25em;
+    margin-bottom: 1em;
+    padding: 0.5em 1em;
+    font-weight: 300;
+}
+
+#contacts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+#contacts-section a {
+    margin: 0.5em 0;
+}
+
+@media only screen and (min-width: 900px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #welcome-section h1 {
+        font-size: 4em;
+    }
+
+    #welcome-subtitle {
+        font-size: 1.5em;
+    }
+
+    #projects h2 {
+        grid-area: title;
+    }
+
+    .project-tile {
+        width: 20em;
+    }
+
+    #project-tribute-page {
+        grid-area: project1;
+    }
+
+    #project-survey-form {
+        grid-area: project2;
+    }
+
+    #project-landing-page {
+        grid-area: project3;
+    }
+
+    #project-documentation-page {
+        grid-area: project4;
+    }
+
+    #projects {
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas:
+            ".          title   ."
+            "project1   .       project2"
+            ".          .       ."
+            "project3   .       project4";
+    }
 }
